@@ -1,4 +1,15 @@
 {
- "baseUrl" : "https://jsonplaceholder.typicode.com"
+ "baseUrl" : "https://slack.com/api",
+ "create_channel" : "/channels.create",
+ "join_channel" : "/channels.join",
+ "rename_channel" : "/channels.rename",
+ "list_channel" : "/channels.list",
+ "archive_channel" : "/channels.archive",
+
+ "signinToken": "xoxp-1056254264883-1056254264947-1053169353398-286556caefed2ec3458bb7f29be8a1e9",
+
+ "channelName" : "chaichennal11",
+ "channelRename" : "chaihennalrename11"
+
 
 }

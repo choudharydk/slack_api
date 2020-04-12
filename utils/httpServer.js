@@ -1,6 +1,6 @@
 /**
  *@author Dhruv Choudhary <dhruv.1si12cs038@gmail.com>
- @created 2019-24-6
+ @created 2020-12-4
  */
 
 'use strict';
@@ -14,12 +14,13 @@ var request = require('request');
  * @param {*} headers headers to be set
  * @param {*} data payload to be sent on server, optional parameter
  */
-function requestPromiseQuery(url, method, headers, data) {
+function requestPromiseQuery(url, method, headers, data, qs) {
 
 	data = data || null;
 	return rp({
 		url: url,
-		body: data,
+		formData: data,
+		qs: qs,
 		method: method,
 		json: true,
 		headers: headers,
@@ -34,7 +35,7 @@ function requestPromiseQuery(url, method, headers, data) {
  * @param {*} headers headers to be set
  * @param {*} callback either response or error
  */
-function requestQuery(url, method,headers, callback) {
+function requestQuery(url, method, headers, callback) {
 	let options = {
 		url: url,
 		method: method,

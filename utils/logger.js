@@ -1,7 +1,4 @@
 var log4js = require( "log4js" );
-//var log = require("../utils/logger")
-//log4js.configure(log.logging());
-//var logger = log4js.getLogger();
 
 var logging = () => {
 
