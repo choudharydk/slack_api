@@ -4,5 +4,9 @@
  * To prevent it, we need to write custom file whcih overwrites this inbuilt feature of mocha
  */
 
-require("./slackApi")
+require("./TestCreateChannel");
+require("./TestJoinChannel");
+require("./TestRenameChannel");
+require("./TestListChannel");
+require("./TestArchiveChannel");
 
