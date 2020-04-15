@@ -18,18 +18,23 @@ var logger = log4js.getLogger();
 
 describe("Slack Create API", () => {
 
-    it("Create a new Channel", async () => {
+    let dataItem = [
+        {name: "test-" + helper.randomCharString(4)},
+        {name: "test-" + helper.randomCharString(2)},
+      ];
+
+      dataItem.forEach((run) =>{
+      it("Creating a new Channel '"+run.name+"'", async () => {
         logger.info("Slack create API TEST Starts")
 
-        let channelName = "test-" + helper.randomCharString(4);
         await create
-            .createChannel(channelName)
+            .createChannel(run.name)
             .then((response) => {
                 createdChannel = response.body.channel;
                 logger.info("response in create slack channel is", JSON.stringify(response.body))
                 expect(response.statusCode).to.equal(200);
                 expect(createdChannel.id).to.not.equal(null);
-                expect(createdChannel.name).to.equal(channelName);
+                expect(createdChannel.name).to.equal(run.name);
                 logger.info("slack Create Service API TEST ENDS")
                 logger.info("********************************************************************")
             })
@@ -38,6 +43,7 @@ describe("Slack Create API", () => {
             });
 
     })
+})
 
 })
 
